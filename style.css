@@ -82,11 +82,16 @@ img{
     transition: all ease-in ;
     transition-delay: 10s;
 }
+.kpom{
+    margin-left: 30px;
+}
 input{
     border: none;
-    padding: 6px;
+    padding: 6px ;
+    text-align: center;
+    align-items: center;
     font-size: 30px;
-    width: 40px;
+    width: 80px;
     background: linear-gradient(190deg, rgba(255,255,255,0), rgba(255,255,255,0.1));
 backdrop-filter: blur(100px);
 -webkit-backdrop-filter: blur(100px);
