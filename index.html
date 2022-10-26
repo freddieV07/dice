@@ -81,21 +81,13 @@ var firstN = Math.floor(Math.random() * 6 ) + 1;
     }else if (firstN < secondN ) {
         $countr.value = parseInt($countr.value) + 1; // `parseInt` converts the `value` from a string to a number;
  
-    }     
+    }   else if ($counter.value == 99 || $countr.value == 99) {
+         $counter.value = 0 ;
+         $countr.value = 0 ;
+       }  
  }
  
-// console.log("opoppppppppp");
-//  function score() {
-//     var inc = 0;
-//  if (firstN > secondN) {
-//     inc += 1 ;
-//     console.log(inc)
-//     return;
-//    // document.querySelector('p').innerHTML = Number(inc) ;
-//  } 
-//  console.log(score());
-//  }
-}
+
 
 </script>
 </body>
