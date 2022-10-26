@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game">
+        <div class="score">
+            <h1>Scorebord</h1>
+            <p> <input readonly onfocus="this.blur" type="text" class="counter" value="0"/></p>
+            <p>:</p>
+            <p><input readonly onfocus="this.blur" type="text" class="countr" value="0"/></p>
+        </div>
+       <div class="main">
+            <div class="player">
+                <h1>User</h1>
+                <img src="image/dice5.jpg">
+            </div>
+            <div class="ai">
+                <h1>Bot</h1>
+                <img src="image/dice5.jpg">
+            </div>
+      </div>
+     
+      <button  id="btn" >Roll</button>
+   </div>
+<script>
+
+ 
+let dice = document.querySelectorAll("img");
+
+
+    dice.forEach(function(die) {
+        die.classList.add("shake")
+    })
+
+document.getElementById("btn").addEventListener("click",changeText);
+document.getElementById("y").addEventListener("click",change);
+
+function changeText(event){
+    
+  if(event.target.id === "btn"){
+    setTimeout(function (die) {
+        dice.forEach(function(die) {
+        die.classList.remove("shake")
+    })
+    }, 10000000);
+    function myfunc(){
+    dice.forEach(function(live) {
+        live.classList.add("round")
+        console.log()
+    });
+}
+setTimeout(function(live) {
+        dice.forEach(function(live) {
+        live.classList.remove("round")
+    })
+}, 1000);
+myfunc();
+
+var firstN = Math.floor(Math.random() * 6 ) + 1;
+ //console.log(firstN);
+ var firstD = 'image/dice' + firstN + '.jpg'
+ document.querySelectorAll('img')[0].setAttribute('src', firstD);
+
+    var secondN = Math.floor(Math.random() * 6 ) + 1;
+ //console.log(firstN);
+ var secondD = 'image/dice' + secondN + '.jpg'
+ //console.log(firstD)
+
+    setInterval(document.querySelectorAll('img')[1].setAttribute('src', secondD),);
+    var $counter = document.querySelector('.counter')
+    var $countr = document.querySelector('.countr');
+    if (firstN > secondN ) {
+      $counter.value = Number($counter.value) + 1; // `parseInt` converts the `value` from a string to a number;
+ 
+    }else if (firstN < secondN ) {
+        $countr.value = parseInt($countr.value) + 1; // `parseInt` converts the `value` from a string to a number;
+ 
+    }     
+ }
+ 
+// console.log("opoppppppppp");
+//  function score() {
+//     var inc = 0;
+//  if (firstN > secondN) {
+//     inc += 1 ;
+//     console.log(inc)
+//     return;
+//    // document.querySelector('p').innerHTML = Number(inc) ;
+//  } 
+//  console.log(score());
+//  }
+}
+
+</script>
+</body>
+</html>
